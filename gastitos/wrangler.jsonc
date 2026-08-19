@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "gastitos",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-18",
+  "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "single-page-application" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "gastitos-db", "database_id": "REEMPLAZAR_CON_EL_ID_DE_D1" }
+  ]
+}

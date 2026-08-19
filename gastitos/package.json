@@ -1,0 +1,27 @@
+{
+  "name": "gastitos",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:worker\" \"npm run dev:client\"",
+    "dev:worker": "wrangler dev --local --port 8787",
+    "dev:client": "vite",
+    "build": "vite build",
+    "db:local": "wrangler d1 execute gastitos-db --local --file=./schema.sql",
+    "db:remote": "wrangler d1 execute gastitos-db --remote --file=./schema.sql",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "hono": "^4.7.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.0.5",
+    "wrangler": "^4.8.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.0"
+  }
+}
